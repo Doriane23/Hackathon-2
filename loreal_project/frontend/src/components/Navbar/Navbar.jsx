@@ -13,8 +13,23 @@ function Navbar() {
     <div>
       <nav className="navbar">
         <a className="navlogo" href="/">
-        <img className="imghome" src="src\assets\logogold.png" alt="loreallogo" />
+          <img
+            className="imghome"
+            src="src\assets\logogold.png"
+            alt="loreallogo"
+          />
         </a>
+        <div className="search-box">
+          <button className="btn-search">
+            <i className="fas fa-search"></i>
+          </button>
+          <input
+            type="text"
+            className="input-search"
+            placeholder="Type to Search..."
+          />
+        </div>
+
         <ul className="navList">
           <a className="navLabel" href="/">
             <li className="navSelect">Home</li>
