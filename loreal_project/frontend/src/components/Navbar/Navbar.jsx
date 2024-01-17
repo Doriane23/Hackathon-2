@@ -39,7 +39,7 @@ function Navbar() {
           <li>
             <button
               type="button"
-              className="navSLabel"
+              className="navSelect"
               onClick={() => {
                 setOpenLogin(true);
               }}
