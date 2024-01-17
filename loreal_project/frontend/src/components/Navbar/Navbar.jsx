@@ -19,15 +19,9 @@ function Navbar() {
             alt="loreallogo"
           />
         </a>
-        <div className="search-box">
-          <button className="btn-search">
-            <i className="fas fa-search"></i>
-          </button>
-          <input
-            type="text"
-            className="input-search"
-            placeholder="Type to Search..."
-          />
+
+        <div className="searchcontainer">
+          <input className="searchinput" type="text" placeholder="Search..." />
         </div>
 
         <ul className="navList">
