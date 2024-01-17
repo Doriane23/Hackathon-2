@@ -1,40 +1,35 @@
 -- SQLBook: Code
+
 -- Exported from QuickDBD: https://www.quickdatabasediagrams.com/
 -- NOTE! If you have used non-SQL datatypes in your design, you will have to change these here.
-
-
-CREATE TABLE `User` (
-    `id` int  NOT NULL AUTO_INCREMENT,
-    `name` varchar(50)  NOT NULL ,
-    `email` varchar(100)  NOT NULL ,
-    `password` varchar(255)  NOT NULL ,
-    `image` varchar(255),
-    PRIMARY KEY (
-        `id`
-    )
+create table `product` (
+  `id` INT primary key auto_increment not null,
+  `name` VARCHAR(255) NOT NULL,
+  `product_type` VARCHAR(255),
+  `description` VARCHAR(255),
+  `price` INT,
+  `color` VARCHAR(255)
 );
 
-CREATE TABLE `Post` (
-    `id` int  NOT NULL AUTO_INCREMENT,
-    `content` text  NOT NULL ,
-    `user_id` int  NOT NULL ,
-    `categorie_id` int  NOT NULL ,
-    PRIMARY KEY (
-        `id`
-    )
+create table `user` (
+  `id` INT primary key auto_increment not null,
+  `firstname` VARCHAR(255) NOT NULL,
+  `lastname` VARCHAR(255) NOT NULL,
+  `email` VARCHAR(255) NOT NULL,
+  `password` VARCHAR(255) NOT NULL,
+  `profil` VARCHAR(255) NOT NULL,
+  `address` VARCHAR(255) NOT NULL,
+  `age` INT NOT NULL,
+  `hair_type` VARCHAR(255) NOT NULL,
+  `hair_color` VARCHAR(255) NOT NULL,
+  `skin_type` VARCHAR(255) NOT NULL,
+  `skin_color` VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE `Categorie` (
-    `id` int  NOT NULL AUTO_INCREMENT,
-    `name` varchar(50)  NOT NULL ,
-    PRIMARY KEY (
-        `id`
-    )
+
+create table `user_product` (
+  `id_user` INT NOT NULL,
+  `id_product` INT NOT NULL,
+  FOREIGN KEY (`id_user`) REFERENCES user(id) ON delete CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY (`id_product`) REFERENCES product(id) ON delete CASCADE ON UPDATE CASCADE
 );
-
-ALTER TABLE `Post` ADD CONSTRAINT `fk_Post_user_id` FOREIGN KEY(`user_id`)
-REFERENCES `User` (`id`);
-
-ALTER TABLE `Post` ADD CONSTRAINT `fk_Post_categorie_id` FOREIGN KEY(`categorie_id`)
-REFERENCES `Categorie` (`id`);
-

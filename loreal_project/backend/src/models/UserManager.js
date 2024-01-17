@@ -3,44 +3,68 @@ const AbstractManager = require("./AbstractManager");
 class UserManager extends AbstractManager {
   constructor() {
     // Call the constructor of the parent class (AbstractManager)
-    // and pass the table name "item" as configuration
+    // and pass the table name "user" as configuration
     super({ table: "user" });
   }
 
   // The C of CRUD - Create operation
 
-  async create(item, avatar) {
-    // Execute the SQL INSERT query to add a new item to the "item" table
+  async create(user) {
+    const { id, firstname, lastname, email, password, profil, adress, age, hair_type, hair_color, skin_type, skin_color, id_products } = user;
+    // Execute the SQL INSERT query to add a new user to the "user" table
     const [result] = await this.database.query(
-      `insert into ${this.table} (name, email, password, image) values (?, ?, ?, ?)`,
-      [item.name, item.email, item.password, avatar]
+      `insert into ${this.table} (id, firstname, lastname, email, password, profil, adress, age, hair_type, hair_color, skin_type, skin_color, id_products) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      [id, firstname, lastname, email, password, profil, adress, age, hair_type, hair_color, skin_type, skin_color, id_products]
     );
 
-    // Return the ID of the newly inserted item
+    // Return the ID of the newly inserted user
     return result.insertId;
   }
 
+  // The Rs of CRUD - Read operations
+
+  async read(id) {
+    // Execute the SQL SELECT query to retrieve a specific user by its ID
+    const [rows] = await this.database.query(
+      `select * from ${this.table} where id = ?`,
+      [id]
+    );
+
+    // Return the first row of the result, which represents the user
+    return rows[0];
+  }
+
   async readAll() {
-    // Execute the SQL SELECT query to retrieve all items from the "item" table
+    // Execute the SQL SELECT query to retrieve all users from the "user" table
     const [rows] = await this.database.query(`select * from ${this.table}`);
 
-    // Return the array of items
+    // Return the array of users
     return rows;
   }
 
   // The U of CRUD - Update operation
-  // TODO: Implement the update operation to modify an existing item
+  // TODO: Implement the update operation to modify an existing user
 
-  // async update(item) {
-  //   ...
-  // }
+  async update(user, id) {
+    // Execute the SQL INSERT query to update the row with tie id on the "user" table
+    const result = await this.database.query(
+      `update ${this.table} set ? where id = ?`,
+      [user, id]
+    );
+
+    return result;
+  }
 
   // The D of CRUD - Delete operation
-  // TODO: Implement the delete operation to remove an item by its ID
+  // TODO: Implement the delete operation to remove an user by its ID
+  async delete(id) {
+    const result = await this.database.query(
+      `delete from ${this.table} where id = ?`,
+      [id]
+    );
 
-  // async delete(id) {
-  //   ...
-  // }
+    return result;
+  }
 }
 
 module.exports = UserManager;

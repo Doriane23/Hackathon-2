@@ -4,7 +4,7 @@
 require("dotenv").config();
 
 // Import Faker library for generating fake data
-const { faker } = require("@faker-js/faker");
+const { faker, fakerFR } = require("@faker-js/faker");
 
 // Import database client
 const database = require("./database/client");
@@ -20,14 +20,73 @@ const seed = async () => {
     // Generating Seed Data
 
     // Optional: Truncate tables (remove existing data)
-    await database.query("truncate item");
+    // await database.query("truncate product");
 
     // Insert fake data into the 'item' table
     for (let i = 0; i < 10; i += 1) {
       queries.push(
-        database.query("insert into item(title) values (?)", [
-          faker.lorem.word(),
-        ])
+        database.query(
+          "insert into product(name, product_type, description, price, color) values (?, ?, ?, ?, ?)",
+          [
+            faker.commerce.product(),
+            faker.lorem.word(),
+            faker.commerce.productMaterial(),
+            +faker.commerce.price({ min: 10, max: 250, dec: 0 }),
+            faker.color.human(),
+          ]
+        )
+      );
+    }
+
+    /* ************************************************************************* */
+
+    /* ************************************************************************* */
+
+    // Generating Seed Data
+
+    // Optional: Truncate tables (remove existing data)
+    // await database.query("truncate user");
+
+    // Insert fake data into the 'item' table
+    for (let i = 0; i < 10; i += 1) {
+      queries.push(
+        database.query(
+          "insert into user(firstname, lastname, email, password, profil, address, age, hair_type, hair_color, skin_type, skin_color) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+          [
+            fakerFR.person.firstName(),
+            fakerFR.person.lastName(),
+            faker.internet.email(),
+            faker.internet.password(),
+            "Pro",
+            faker.address.streetAddress(),
+            faker.number.int({ min: 18, max: 65 }),
+            "chauve",
+            "roux",
+            "caucasien",
+            "blanc",
+          ]
+        )
+      );
+    }
+
+    /* ************************************************************************* */
+    /* ************************************************************************* */
+
+    // Generating Seed Data
+
+    // Optional: Truncate tables (remove existing data)
+    // await database.query("truncate user_product");
+
+    // Insert fake data into the 'item' table
+    for (let i = 0; i < 5; i += 1) {
+      queries.push(
+        database.query(
+          "insert into user_product(id_user, id_product) values (?, ?)",
+          [
+            faker.number.int({ min: 1, max: 10 }),
+            faker.number.int({ min: 1, max: 10 }),
+          ]
+        )
       );
     }
 
