@@ -19,10 +19,10 @@ function Navbar() {
           <a className="navLabel" href="/">
             <li className="navSelect">Home</li>
           </a>
-          <a className="navLabel" href="/makeadrink">
+          <a className="navLabel" href="/account">
             <li className="navSelect">Account</li>
           </a>
-          <a className="navLabel" href="/contacts">
+          <a className="navLabel" href="/chariot">
             <li className="navSelect">Chariot 🛒</li>
           </a>
         </ul>
