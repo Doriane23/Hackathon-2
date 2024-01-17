@@ -13,16 +13,25 @@ function Navbar() {
     <div>
       <nav className="navbar">
         <a className="navlogo" href="/">
-        <img className="imghome" src="src\assets\logogold.png" alt="loreallogo" />
+          <img
+            className="imghome"
+            src="src\assets\logogold.png"
+            alt="loreallogo"
+          />
         </a>
+
+        <div className="searchcontainer">
+          <input className="searchinput" type="text" placeholder="Search..." />
+        </div>
+
         <ul className="navList">
           <a className="navLabel" href="/">
             <li className="navSelect">Home</li>
           </a>
-          <a className="navLabel" href="/makeadrink">
+          <a className="navLabel" href="/account">
             <li className="navSelect">Account</li>
           </a>
-          <a className="navLabel" href="/contacts">
+          <a className="navLabel" href="/chariot">
             <li className="navSelect">Chariot 🛒</li>
           </a>
         </ul>

@@ -8,11 +8,10 @@ $outline: #f9f9f9c5;
 //Style the body for all the website
 
 * {
-    font-family: "Inter", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 body {
-
   color: #f9f9f9;
   margin: 0;
 }
@@ -63,7 +62,7 @@ body {
 }
 
 .imghome {
-    width: 15rem;
+  width: 15rem;
 }
 
 //Hide the burger menu
@@ -90,7 +89,7 @@ body {
   .navbar {
     line-height: calc(1em + 2vw);
   }
-  .h1 {
+  .navlogo {
     font-size: calc(0.5em + 2vw);
   }
   .navList {
@@ -101,7 +100,8 @@ body {
 
   .menuBurger-icon {
     margin-right: 15px;
-    display: block;
+    display: flex;
+    align-items: center;
     font-size: calc(2em + 2vw);
     margin-top: 10px;
   }
@@ -119,15 +119,16 @@ body {
     background-color: $navbar-color;
   }
   .navSelect {
-    border-bottom: 0.5px solid $outline;
+    border-bottom: 1px solid $outline;
   }
 
   //Style on click
 
   .menuBurger-icon-active {
     margin: 15px;
-    display: block;
     font-size: calc(2em + 2vw);
+    display: flex;
+    align-items: center;
   }
   .menuBurger-icon-active:before {
     content: "\2715";
@@ -138,7 +139,26 @@ body {
   .navbar {
     line-height: 1.5em;
   }
-  .h1 {
+
+  .navlogo {
     font-size: 1em;
   }
+}
+
+/* SEARCH BAR */
+
+.searchcontainer {
+  padding-top: 23px;
+}
+
+.searchinput {
+  color: #c2a265;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  font-weight: bold;
+  width: 200%;
+  padding: 12px 24px;
+  font-size: 14px;
+  background-color: transparent;
+  border-radius: 50px;
 }
