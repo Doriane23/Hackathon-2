@@ -12,7 +12,7 @@ function FormRegister({ isLogin, modal }) {
             <button className="closeLogin" type="button" onClick={modal}>
               <p> X </p>
             </button>
-            <p className="heading">Inscription</p>
+            <p className="heading">Subscribe</p>
             <div className="field">
               <svg
                 className="input-icon"
@@ -35,7 +35,7 @@ function FormRegister({ isLogin, modal }) {
               </svg>
               <input
                 autoComplete="off"
-                placeholder="Prénom"
+                placeholder="Firstname"
                 className="input-field"
                 type="text"
               />
@@ -62,7 +62,7 @@ function FormRegister({ isLogin, modal }) {
               </svg>
               <input
                 autoComplete="off"
-                placeholder="NOM"
+                placeholder="LASTNAME"
                 className="input-field"
                 type="text"
               />
@@ -101,7 +101,7 @@ function FormRegister({ isLogin, modal }) {
                 </path>
               </svg>
               <input
-                placeholder="Mot de passe"
+                placeholder="Password"
                 className="input-field"
                 type="password"
               />
@@ -120,7 +120,7 @@ function FormRegister({ isLogin, modal }) {
                 </path>
               </svg>
               <input
-                placeholder="Confirmer mot de passe"
+                placeholder="Confirm password"
                 className="input-field"
                 type="password"
               />
@@ -131,14 +131,14 @@ function FormRegister({ isLogin, modal }) {
                 className="button1"
                 onClick={() => isLogin(true)}
               >
-                Connexion
+                Connection
               </button>
               <button
                 type="button"
                 className="button2"
                 onClick={() => isLogin(false)}
               >
-                Inscription
+                Subscribe
               </button>
             </div>
           </form>
@@ -156,7 +156,7 @@ function FormLogin({ isLogin, modal }) {
           <button className="closeLogin" type="button" onClick={modal}>
             <p> X </p>
           </button>
-          <p className="heading">Connexion</p>
+          <p className="heading">Connection</p>
           <div className="field">
             <svg
               className="input-icon"
@@ -172,7 +172,7 @@ function FormLogin({ isLogin, modal }) {
             </svg>
             <input
               autoComplete="off"
-              placeholder="Identifiant"
+              placeholder="Identifier"
               className="input-field"
               type="text"
             />
@@ -191,7 +191,7 @@ function FormLogin({ isLogin, modal }) {
               </path>
             </svg>
             <input
-              placeholder="Mot de passe"
+              placeholder="Password"
               className="input-field"
               type="password"
             />
@@ -202,14 +202,14 @@ function FormLogin({ isLogin, modal }) {
               className="button1"
               onClick={() => isLogin(true)}
             >
-              Connexion
+              Connection
             </button>
             <button
               type="button"
               className="button2"
               onClick={() => isLogin(false)}
             >
-              Inscription
+              Subscribe
             </button>
           </div>
         </form>

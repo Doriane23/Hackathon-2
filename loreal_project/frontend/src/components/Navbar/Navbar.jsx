@@ -1,4 +1,7 @@
 import "./Navbar.scss";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import Login from "../Login/Login";
 
 function showMenu() {
   const menuBurgerIcon = document.getElementsByClassName("menuBurger-icon");
@@ -9,13 +12,14 @@ function showMenu() {
 }
 
 function Navbar() {
+  const [openLogin, setOpenLogin] = useState(false);
   return (
     <div>
       <nav className="navbar">
         <a className="navlogo" href="/">
           <img
             className="imghome"
-            src="src\assets\logogold.png"
+            src="src\assets\logowhite.png"
             alt="loreallogo"
           />
         </a>
@@ -25,16 +29,26 @@ function Navbar() {
         </div>
 
         <ul className="navList">
-          <a className="navLabel" href="/">
+          <Link to="/" className="navLabel">
             <li className="navSelect">Home</li>
-          </a>
-          <a className="navLabel" href="/account">
-            <li className="navSelect">Account</li>
-          </a>
+          </Link>
           <a className="navLabel" href="/chariot">
             <li className="navSelect">Chariot 🛒</li>
           </a>
+
+          <li>
+            <button
+              type="button"
+              className="navSelect"
+              onClick={() => {
+                setOpenLogin(true);
+              }}
+            > Account
+            </button>
+          </li>
+          {openLogin && <Login closeLogin={setOpenLogin} />}
         </ul>
+
         <div
           className="menuBurger-icon"
           onClick={showMenu}
@@ -45,7 +59,7 @@ function Navbar() {
         <a className="navLabel" href="/">
           <li className="navSelect">Home</li>
         </a>
-        <a className="navLabel" href="/makeadrink">
+        <a className="navLabel" href="/">
           <li className="navSelect">Account</li>
         </a>
         <a className="navLabel" href="/contacts">
