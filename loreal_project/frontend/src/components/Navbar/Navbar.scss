@@ -21,24 +21,24 @@ body {
 
 .navbar {
   display: flex;
-  justify-content: space-between;
   background-color: $primary-color;
-  line-height: 2.5em;
+  justify-content: space-between;
   color: $text-color;
-  border-bottom: 0.5px solid $outline;
+  height: 9vh;
 }
 
 .navlogo {
-  all: unset;
+  margin-left: 2rem;
+  width: 14rem;
+  box-sizing: border-box;
   font-size: 1.8em;
-  margin: 15px;
-  margin-left: 2em;
   cursor: pointer;
 }
 
 .navLabel {
   text-decoration: none;
   color: $text-color;
+  font-size: 20px;
   font-style: normal;
   font-weight: bold;
 }
@@ -50,8 +50,11 @@ body {
 }
 
 .navSelect {
-  margin-right: 5em;
-  padding: 1em;
+  display: flex;
+  align-items: center;
+  margin-right: 2em;
+  padding: 2em;
+  height: 9vh;
 }
 
 .navSelect:hover {
@@ -60,7 +63,7 @@ body {
 }
 
 .imghome {
-    width: 30%;
+    width: 15rem;
 }
 
 //Hide the burger menu

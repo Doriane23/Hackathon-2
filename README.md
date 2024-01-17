@@ -1,4 +1,4 @@
-# L'Oréal - Wild Code School Hackathon
+# L'Oréal - Wild Code School - Hackathon
 
 ## Introduction
 
