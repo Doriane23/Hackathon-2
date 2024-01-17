@@ -4,6 +4,26 @@ const multer = require("multer");
 const upload = multer({ dest: "public/uploads" });
 const router = express.Router();
 
+const productControllers = require("./controllers/productControllers");
+// const validateProduct = require("./validators/validateProduct");
+
+router.get("/products", productControllers.browse);
+router.get("/products/:id", productControllers.read);
+// router.post("/products", validateProduct, productControllers.add);
+// router.put("/products/:id", validateProduct, productControllers.edit);
+// router.delete("/products/:id", productControllers.destroy);
+
+
+const userControllers = require("./controllers/userControllers");
+// const validateUser = require("./validators/validateUser");
+
+router.get("/users", userControllers.browse);
+router.get("/users/:id", userControllers.read);
+// router.post("/users", validateUser, userControllers.add);
+// router.put("/users/:id", validateUser, userControllers.edit);
+// router.delete("/users/:id", userControllers.destroy);
+
+
 /* ************************************************************************* */
 // Define Your API Routes Here
 /* ************************************************************************* */
