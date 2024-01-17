@@ -2,8 +2,8 @@ $primary-color: #181818;
 $navbar-color: #181818ce;
 $secondary-color: #151515;
 
-$text-color: #c2a265;
-$outline: #f9f9f9c5;
+$text-color: #e32847;
+$outline: #f9f9f9f1;
 
 //Style the body for all the website
 
@@ -12,7 +12,7 @@ $outline: #f9f9f9c5;
 }
 
 body {
-  color: #f9f9f9;
+  color: $outline;
   margin: 0;
 }
 
@@ -36,7 +36,7 @@ body {
 
 .navLabel {
   text-decoration: none;
-  color: $text-color;
+  color: $outline;
   font-size: 20px;
   font-style: normal;
   font-weight: bold;
@@ -58,10 +58,11 @@ body {
 
 .navSelect:hover {
   background-color: $text-color;
-  color: $primary-color;
+  color: $outline;
 }
 
 .imghome {
+  transform: translateY(-30%);
   width: 15rem;
 }
 
@@ -152,7 +153,7 @@ body {
 }
 
 .searchinput {
-  color: #c2a265;
+  color: $outline;
   text-transform: capitalize;
   letter-spacing: 2px;
   font-weight: bold;

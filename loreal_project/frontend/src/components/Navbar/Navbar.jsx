@@ -15,7 +15,7 @@ function Navbar() {
         <a className="navlogo" href="/">
           <img
             className="imghome"
-            src="src\assets\logogold.png"
+            src="src\assets\logowhite.png"
             alt="loreallogo"
           />
         </a>
