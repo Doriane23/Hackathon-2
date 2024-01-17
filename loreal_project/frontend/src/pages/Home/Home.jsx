@@ -1,10 +1,21 @@
-import Navbar from "../../components/Navbar/Navbar";
+import React from "react";
 import "./Home.scss";
+import bgvideohome from "../../assets/homevideo.mp4";
 
 function Home() {
   return (
     <div className="globalhome">
-      <h1> je suis le h1 de HOME</h1>
+      <video
+        className="bg-video"
+        autoPlay
+        loop
+        controls={false}
+        playInline
+        muted
+      >
+        {" "}
+        <source src={bgvideohome} type="video/mp4" />
+      </video>
     </div>
   );
 }

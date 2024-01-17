@@ -21,18 +21,16 @@ body {
 
 .navbar {
   display: flex;
-  justify-content: space-between;
   background-color: $primary-color;
-  line-height: 2.5em;
+  justify-content: space-between;
   color: $text-color;
-  border-bottom: 0.5px solid $outline;
 }
 
 .navlogo {
-  all: unset;
+  margin-left: 2rem;
+  width: 14rem;
+  box-sizing: border-box;
   font-size: 1.8em;
-  margin: 15px;
-  margin-left: 2em;
   cursor: pointer;
 }
 
@@ -50,7 +48,7 @@ body {
 }
 
 .navSelect {
-  margin-right: 5em;
+  margin-right: 2em;
   padding: 1em;
 }
 
@@ -60,7 +58,7 @@ body {
 }
 
 .imghome {
-    width: 30%;
+    width: 15rem;
 }
 
 //Hide the burger menu
