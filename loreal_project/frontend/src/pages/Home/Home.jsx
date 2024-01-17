@@ -25,6 +25,7 @@ function Home() {
             src="src\assets\skincare2.png"
             alt="skincare_product"
           />
+          <p className="producttype">Skincare</p>
         </div>
         <div className="product2">
           <img
@@ -32,6 +33,7 @@ function Home() {
             src="src\assets\makeup2.png"
             alt="makeup_product"
           />
+          <p className="producttype">Makeup</p>
         </div>
         <div className="product3">
           <img
@@ -39,6 +41,7 @@ function Home() {
             src="src\assets\haircolor2.png"
             alt="haircolor_product"
           />
+          <p className="producttype">Haircolor</p>
         </div>
         <div className="product4">
           <img
@@ -46,6 +49,7 @@ function Home() {
             src="src\assets\shampoo2.png"
             alt="shampoo_product"
           />
+          <p className="producttype">Shampoo</p>
         </div>
       </div>
     </div>
