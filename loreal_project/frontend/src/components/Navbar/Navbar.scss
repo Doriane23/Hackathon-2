@@ -2,7 +2,7 @@ $primary-color: #181818;
 $navbar-color: #181818ce;
 $secondary-color: #151515;
 
-$text-color: #f9f9f9;
+$text-color: #c2a265;
 $outline: #f9f9f9c5;
 
 //Style the body for all the website
@@ -28,10 +28,11 @@ body {
   border-bottom: 0.5px solid $outline;
 }
 
-.h1 {
+.navlogo {
   all: unset;
   font-size: 1.8em;
   margin: 15px;
+  margin-left: 2em;
   cursor: pointer;
 }
 
@@ -45,11 +46,11 @@ body {
 .navList {
   list-style: none;
   display: flex;
-  justify-content: space-between;
-  margin: 0 1em 0 0;
+  align-items: center;
 }
 
 .navSelect {
+  margin-right: 5em;
   padding: 1em;
 }
 

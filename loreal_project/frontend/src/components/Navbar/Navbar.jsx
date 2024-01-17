@@ -12,7 +12,7 @@ function Navbar() {
   return (
     <div>
       <nav className="navbar">
-        <a className="h1" href="/">
+        <a className="navlogo" href="/">
         <img className="imghome" src="src\assets\logogold.png" alt="loreallogo" />
         </a>
         <ul className="navList">
