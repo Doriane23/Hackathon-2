@@ -153,7 +153,8 @@ body {
 
 .searchinput {
   color: #c2a265;
-  text-transform: uppercase;
+  text-transform: capitalize;
+  letter-spacing: 2px;
   font-weight: bold;
   width: 200%;
   padding: 12px 24px;
