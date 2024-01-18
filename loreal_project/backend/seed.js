@@ -51,15 +51,15 @@ const seed = async () => {
     for (let i = 0; i < 10; i += 1) {
       queries.push(
         database.query(
-          "insert into user(firstname, lastname, email, password, profil, address, age, hair_type, hair_color, skin_type, skin_color) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+          "insert into user(firstname, lastname, email, password, gender, address, birthday, hair_type, hair_color, skin_type, skin_color) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
           [
             fakerFR.person.firstName(),
             fakerFR.person.lastName(),
             faker.internet.email(),
             faker.internet.password(),
-            "Pro",
+            "homme",
             faker.address.streetAddress(),
-            faker.number.int({ min: 18, max: 65 }),
+            faker.date.birthdate({ min: 18, max: 65, mode: 'age' }),
             "chauve",
             "roux",
             "caucasien",
