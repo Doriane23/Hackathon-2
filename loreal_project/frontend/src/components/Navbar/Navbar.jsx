@@ -31,10 +31,10 @@ function Navbar() {
         <ul className="navList">
           <Link to="/" className="navLabel">
             <li className="navSelect">Home</li>
-          </Link>
-          <a className="navLabel" href="/chariot">
-            <li className="navSelect">Chariot 🛒</li>
-          </a>
+          </Link >
+          <Link to="/basket" className="navLabel" >
+            <li className="navSelect">Basket 🛒</li>
+          </Link >
 
           <li>
             <button
@@ -62,8 +62,8 @@ function Navbar() {
         <a className="navLabel" href="/">
           <li className="navSelect">Account</li>
         </a>
-        <a className="navLabel" href="/contacts">
-          <li className="navSelect">Chariot 🛒</li>
+        <a className="navLabel" href="/basket">
+          <li className="navSelect">Basket 🛒</li>
         </a>
       </ul>
     </div>

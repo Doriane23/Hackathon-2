@@ -1,0 +1,36 @@
+$primary-color: #181818;
+$navbar-color: #181818ce;
+$secondary-color: #151515;
+
+$text-color: #e32847;
+$outline: #f9f9f9f1;
+
+
+
+h1 {
+    color: $primary-color;
+}
+
+h2 {
+    color: $text-color;
+}
+.checkbox-master {
+    margin-left: 10px;
+    
+}
+
+.allarticlecheck {
+    color: $text-color;
+}
+
+.checkbox-group {
+    display:flex;
+    flex-direction: column;
+    margin-top: 10px;
+    gap: 3rem;
+}
+
+.checkbox-item {
+    margin-right: 10px;
+    
+}
