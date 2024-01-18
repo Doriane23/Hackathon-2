@@ -13,6 +13,21 @@ function FormRegister({ isLogin, modal }) {
               <p> X </p>
             </button>
             <p className="heading">Subscribe</p>
+            <p className="question">What kind of customer are you ?</p>
+            <div className="globalradio">
+              <ul className="ulradio">
+                <li className="radio-1">
+                  <input id="r1" type="radio" name="radio" value="1"></input>
+                  <label for="radio1">Company</label>
+                </li>
+              </ul>
+              <ul className="ulradio">
+                <li className="radio-2">
+                  <input id="r1" type="radio" name="radio" value="1"></input>
+                  <label for="radio1">Private</label>
+                </li>
+              </ul>
+            </div>
             <div className="field">
               <svg
                 className="input-icon"
@@ -196,6 +211,7 @@ function FormLogin({ isLogin, modal }) {
               type="password"
             />
           </div>
+
           <div className="btn2">
             <button
               type="button"
@@ -260,3 +276,19 @@ Login.propTypes = {
 };
 
 export default Login;
+
+/* <p className="question">What kind of customer are you ?</p>
+          <div className="globalradio">
+            <ul className="ulradio">
+              <li className="radio-1">
+                <input id="r1" type="radio" name="radio" value="1"></input>
+                <label for="radio1">Company</label>
+              </li>
+            </ul>
+            <ul className="ulradio">
+              <li className="radio-2">
+                <input id="r1" type="radio" name="radio" value="1"></input>
+                <label for="radio1">Private</label>
+              </li>
+            </ul>
+          </div> */
