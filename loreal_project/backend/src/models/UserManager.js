@@ -1,4 +1,4 @@
-const AbstractManbirthdayr = require("./AbstractManbirthdayr");
+const AbstractManager = require("./AbstractManager");
 
 class UserManager extends AbstractManager {
   constructor() {
@@ -67,4 +67,4 @@ class UserManager extends AbstractManager {
   }
 }
 
-module.exports = UserManbirthdayr;
+module.exports = UserManager;
