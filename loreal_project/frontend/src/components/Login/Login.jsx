@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import axios from "../../services/axios.js"
 
 import "./Login.scss";
 
@@ -24,31 +25,32 @@ function FormRegister({ isLogin, modal }) {
   };
 
   console.info(user);
+  const hSubmit = (e) => {
+    e.preventDefault();
+
+    axios
+      .post("/users", user)
+      .then((res) => {
+        if (res.status === 200) {
+          success("Vous êtes bien enregistré");
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+        error("Une erreur est survenu");
+      });
+  };
 
   return (
     <div className="field">
       <div>
         <div className="modal-overlay">
-          <form className="form">
+          <form className="form" >
             <button className="closeLogin" type="button" onClick={modal}>
               <p> X </p>
             </button>
             <p className="heading">Subscribe</p>
-            <p className="question">What kind of customer are you ?</p>
-            <div className="globalradio">
-              <ul className="ulradio">
-                <li className="radio-1">
-                  <input id="r1" type="radio" name="radio" value="1"></input>
-                  <label for="radio1">Company</label>
-                </li>
-              </ul>
-              <ul className="ulradio">
-                <li className="radio-2">
-                  <input id="r1" type="radio" name="radio" value="1"></input>
-                  <label for="radio1">Private</label>
-                </li>
-              </ul>
-            </div>
+            
             <div className="field">
               <input
                 autoComplete="off"
@@ -199,7 +201,7 @@ function FormRegister({ isLogin, modal }) {
                 Connection
               </button>
               <button
-                type="button"
+                type="submit"
                 className="button2"
                 onClick={() => isLogin(false)}
               >
