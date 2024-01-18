@@ -11,7 +11,7 @@ function FormRegister({ isLogin, modal }) {
     address: "",
     password: "",
     confirm: "",
-    profil: "",
+    gender: "",
     birthdate: "",
     hair_type: "",
     hair_color: "",
@@ -108,16 +108,16 @@ function FormRegister({ isLogin, modal }) {
               />
             </div>
             <select
-              placeholder="Profil"
               className="field"
-              name="profil"
-              id="profil"
+              name="gender"
+              id="gender"
               onChange={handleChange}
-              value={user.profil}
+              value={user.gender}
             >
-              <option value="">select a profile</option>
+              <option value="">Select a gender</option>
               <option value="Male">Male</option>
               <option value="Female">Female</option>
+              <option value="Other">Other</option>
             </select>
             <div className="field">
               <input
