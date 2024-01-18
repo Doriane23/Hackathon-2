@@ -17,12 +17,13 @@
 }
 
 .form {
+  /* height: 100vh; */
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 3px;
   padding-left: 2rem;
   padding-right: 2rem;
-  padding-bottom: 0.4rem;
+  padding-bottom: 0.2rem;
   background-color: #171717;
   border-radius: 25px;
   transition: 0.4s ease-in-out;
