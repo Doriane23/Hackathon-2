@@ -63,9 +63,10 @@ function Basket() {
   };
 
   return (
-    <div>
-      <h1>Basket</h1>
-      <h2>
+    <div className="ctn">
+      <p className="cou"> 🐐 🐐 🐐</p>
+      <h1 className="title1">Basket</h1>
+      <h2 className="title2">
         All articles
         <label>
           <input

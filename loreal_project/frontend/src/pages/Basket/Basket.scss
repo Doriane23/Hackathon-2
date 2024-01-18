@@ -5,32 +5,45 @@ $secondary-color: #151515;
 $text-color: #e32847;
 $outline: #f9f9f9f1;
 
-
-
-h1 {
-    color: $primary-color;
+.cou {
+  display: none;
+  background: cover;
+  padding: 1rem;
+  margin: 0;
 }
 
-h2 {
-    color: $text-color;
+.cou:hover {
+  background-color: $text-color;
+  color: $text-color;
+  background: cover;
+  padding: 1rem;
+  margin: 0;
+}
+
+.title1 {
+  margin-top: 0;
+  color: $primary-color;
+  margin-top: 5rem;
+}
+
+.title2 {
+  color: $text-color;
 }
 .checkbox-master {
-    margin-left: 10px;
-    
+  margin-left: 10px;
 }
 
 .allarticlecheck {
-    color: $text-color;
+  color: $text-color;
 }
 
 .checkbox-group {
-    display:flex;
-    flex-direction: column;
-    margin-top: 10px;
-    gap: 3rem;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  gap: 3rem;
 }
 
 .checkbox-item {
-    margin-right: 10px;
-    
+  margin-right: 10px;
 }
