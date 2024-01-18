@@ -17,7 +17,11 @@ router.delete("/products/:id", productControllers.destroy);
 const userControllers = require("./controllers/userControllers");
 //const validateUser = require("./validators/validateUser");
 
-
+router.get("/users", productControllers.browse);
+router.get("/users/:id", productControllers.read);
+router.post("/users", productControllers.add);
+router.put("/users/:id", productControllers.edit);
+router.delete("/users/:id", productControllers.destroy);
 
 
 /* ************************************************************************* */
