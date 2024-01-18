@@ -117,6 +117,22 @@
   color: white;
 }
 
+.question {
+  display: flex;
+  justify-content: center;
+}
+
+.ulradio {
+  list-style: none;
+  align-items: center;
+}
+
+.globalradio{
+  display: flex;
+  justify-content: space-around;
+  margin-right: 3.5rem;
+}
+
 @media (max-width: 768px) {
   .btn2 {
     margin: 0.5rem;
