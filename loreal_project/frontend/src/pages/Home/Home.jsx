@@ -1,6 +1,7 @@
 import React from "react";
 import "./Home.scss";
 import bgvideohome from "../../assets/homevideo.mp4";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -19,16 +20,19 @@ function Home() {
         </video>
       </div>
       <div className="globalproduct">
-        <div className="product1">
-          {/* <Link to=""> */}
-          <img
-            className="imgproduct"
-            src="src\assets\skincare2.png"
-            alt="skincare_product"
-          />
-          <p className="producttype">Skincare</p>
-          {/* </Link> */}
-        </div>
+        
+          <div className="product1">
+          <Link to="/producttype">
+            <img
+              className="imgproduct"
+              src="src\assets\skincare2.png"
+              alt="skincare_product"
+            />
+            </Link>
+            <p className="producttype">Skincare</p>
+            
+          </div>
+        
         <div className="product2">
           <img
             className="imgproduct"
