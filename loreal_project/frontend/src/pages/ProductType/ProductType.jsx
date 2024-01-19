@@ -4,7 +4,7 @@ import "./ProductType.scss";
 function ProductType() {
     return (
         <div>
-        <h1>Je suis le h1 de product</h1>
+        <h1>Category of Product</h1>
         </div>
     )
 

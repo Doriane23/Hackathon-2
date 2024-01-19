@@ -20,20 +20,18 @@ function Home() {
         </video>
       </div>
       <div className="globalproduct">
-        
-          <div className="product1">
+        <div className="product1">
           <Link to="/producttype">
             <img
               className="imgproduct"
               src="src\assets\skincare2.png"
               alt="skincare_product"
             />
-            </Link>
-            <p className="producttype">Skincare</p>
-            
-          </div>
-        
-        <div className="product2">
+          </Link>
+          <p className="producttype">Skincare</p>
+        </div>
+
+        <div className="product1">
           <img
             className="imgproduct"
             src="src\assets\makeup2.png"
@@ -41,7 +39,7 @@ function Home() {
           />
           <p className="producttype">Makeup</p>
         </div>
-        <div className="product3">
+        <div className="product1">
           <img
             className="imgproduct"
             src="src\assets\haircolor2.png"
@@ -49,7 +47,7 @@ function Home() {
           />
           <p className="producttype">Haircolor</p>
         </div>
-        <div className="product4">
+        <div className="product1">
           <img
             className="imgproduct"
             src="src\assets\shampoo2.png"
