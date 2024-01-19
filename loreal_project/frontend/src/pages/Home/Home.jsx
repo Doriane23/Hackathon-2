@@ -20,14 +20,12 @@ function Home() {
       </div>
       <div className="globalproduct">
         <div className="product1">
-          {/* <Link to=""> */}
           <img
             className="imgproduct"
             src="src\assets\skincare2.png"
             alt="skincare_product"
           />
           <p className="producttype">Skincare</p>
-          {/* </Link> */}
         </div>
         <div className="product2">
           <img
