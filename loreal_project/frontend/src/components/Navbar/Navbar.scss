@@ -23,7 +23,7 @@ body {
   background-color: $primary-color;
   justify-content: space-between;
   color: $text-color;
-  height: 9vh;
+  height: 11vh;
 }
 
 .navlogo {
@@ -52,7 +52,7 @@ body {
   display: flex;
   align-items: center;
   margin-right: 2em;
-  padding: 2em;
+  padding: 0 2em;
   height: 9vh;
   font-size: 20px;
   font-weight: bold;
@@ -66,6 +66,7 @@ body {
 .navSelect:hover {
   background-color: $text-color;
   color: $outline;
+  height: 11vh;
 }
 
 .imghome {
