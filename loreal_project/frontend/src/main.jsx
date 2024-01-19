@@ -17,10 +17,10 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/category",
+        path:"/producttype",
         element: <ProductType />,
       },
-      {
+       {
         path: "/basket",
         element: <Basket />,
       },

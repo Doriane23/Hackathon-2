@@ -1,128 +1,195 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import axios from "../../services/axios.js"
 
 import "./Login.scss";
 
 function FormRegister({ isLogin, modal }) {
+  const [user, setUser] = useState({
+    lastname: "",
+    firstname: "",
+    email: "",
+    address: "",
+    password: "",
+    confirm: "",
+    gender: "",
+    birthdate: "",
+    hair_type: "",
+    hair_color: "",
+    skin_type: "",
+    skin_color: "",
+  });
+
+  const handleChange = (event) => {
+    setUser({ ...user, [event.target.name]: event.target.value });
+  };
+
+  console.info(user);
+  const hSubmit = (e) => {
+    e.preventDefault();
+
+    axios
+      .post("/users", user)
+      .then((res) => {
+        if (res.status === 200) {
+          success("Vous êtes bien enregistré");
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+        error("Une erreur est survenu");
+      });
+  };
+
   return (
     <div className="field">
       <div>
         <div className="modal-overlay">
-          <form className="form">
+          <form className="form" >
             <button className="closeLogin" type="button" onClick={modal}>
               <p> X </p>
             </button>
             <p className="heading">Subscribe</p>
-            <p className="question">What kind of customer are you ?</p>
-            <div className="globalradio">
-              <ul className="ulradio">
-                <li className="radio-1">
-                  <input id="r1" type="radio" name="radio" value="1"></input>
-                  <label for="radio1">Company</label>
-                </li>
-              </ul>
-              <ul className="ulradio">
-                <li className="radio-2">
-                  <input id="r1" type="radio" name="radio" value="1"></input>
-                  <label for="radio1">Private</label>
-                </li>
-              </ul>
-            </div>
+            
             <div className="field">
-
               <input
                 autoComplete="off"
                 placeholder="Firstname"
                 className="input-field"
                 type="text"
+                onChange={handleChange}
+                id="firstname"
+                name="firstname"
+                value={user.firstname}
               />
             </div>
             <div className="field">
-
               <input
                 autoComplete="off"
                 placeholder="LASTNAME"
                 className="input-field"
                 type="text"
+                onChange={handleChange}
+                id="lastname"
+                name="lastname"
+                value={user.lastname}
               />
             </div>
             <div className="field">
-
               <input
                 autoComplete="off"
                 placeholder="Email"
                 className="input-field"
-                type="text"
+                type="email"
+                onChange={handleChange}
+                id="email"
+                name="email"
+                value={user.email}
               />
             </div>
             <div className="field">
-
               <input
                 placeholder="Password"
                 className="input-field"
                 type="password"
+                name="password"
+                id="password"
+                onChange={handleChange}
+                value={user.password}
               />
             </div>
             <div className="field">
-
               <input
-                placeholder="Profil"
+                placeholder="Confirm Password"
                 className="input-field"
                 type="password"
+                name="confirm"
+                id="confirm"
+                onChange={handleChange}
+                value={user.confirm}
               />
             </div>
+            <select
+              className="field"
+              name="gender"
+              id="gender"
+              onChange={handleChange}
+              value={user.gender}
+            >
+              <option value="">Select a gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+            </select>
             <div className="field">
-
               <input
                 autoComplete="off"
                 placeholder="Address"
                 className="input-field"
                 type="text"
+                name="address"
+                id="address"
+                onChange={handleChange}
+                value={user.address}
               />
             </div>
             <div className="field">
-
               <input
                 autoComplete="off"
-                placeholder="Age"
                 className="input-field"
-                type="text"
+                type="date"
+                name="birthdate"
+                id="birthdate"
+                onChange={handleChange}
+                value={user.birthdate}
               />
             </div>
             <div className="field">
-
               <input
                 autoComplete="off"
-                placeholder="Hair_type"
+                placeholder="Hair type"
                 className="input-field"
                 type="text"
+                name="hair_type"
+                id="hair_type"
+                onChange={handleChange}
+                value={user.hair_type}
               />
             </div>
             <div className="field">
-
               <input
                 autoComplete="off"
-                placeholder="Hair_color"
+                placeholder="Hair color"
                 className="input-field"
                 type="text"
+                name="hair_color"
+                id="hair_color"
+                onChange={handleChange}
+                value={user.hair_color}
               />
             </div>
             <div className="field">
-
               <input
                 autoComplete="off"
-                placeholder="Skin_type"
+                placeholder="Skin type"
                 className="input-field"
                 type="text"
+                name="skin_type"
+                id="skin_type"
+                onChange={handleChange}
+                value={user.skin_type}
               />
             </div>
             <div className="field">
-
               <input
                 autoComplete="off"
-                placeholder="Skin_color"
+                placeholder="Skin color"
                 className="input-field"
                 type="text"
+                name="skin_color"
+                id="skin_color"
+                onChange={handleChange}
+                value={user.skin_color}
               />
             </div>
             <div className="btn2">
@@ -134,7 +201,7 @@ function FormRegister({ isLogin, modal }) {
                 Connection
               </button>
               <button
-                type="button"
+                type="submit"
                 className="button2"
                 onClick={() => isLogin(false)}
               >
@@ -261,19 +328,3 @@ Login.propTypes = {
 };
 
 export default Login;
-
-/* <p className="question">What kind of customer are you ?</p>
-          <div className="globalradio">
-            <ul className="ulradio">
-              <li className="radio-1">
-                <input id="r1" type="radio" name="radio" value="1"></input>
-                <label for="radio1">Company</label>
-              </li>
-            </ul>
-            <ul className="ulradio">
-              <li className="radio-2">
-                <input id="r1" type="radio" name="radio" value="1"></input>
-                <label for="radio1">Private</label>
-              </li>
-            </ul>
-          </div> */
